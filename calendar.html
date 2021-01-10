@@ -7,7 +7,20 @@
   <title>Calendar2021</title>
 </head>
 <body>
-Hello World!!
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+  <div id="app">
+    <h1>2021 Calendar!!</h1>
+    <div id="menu">
+      <month-menu
+        v-for="date in dates"
+        :year="date.year"
+        :month="date.month"
+        @clicked-display-button="getCalendar"
+      >
+      </month-menu>
+    </div>
+  </div>
 <script src="script.js"></script>
 </body>
 </html>
