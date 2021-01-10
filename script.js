@@ -31,11 +31,24 @@ Vue.filter('addYear', function(value) {
     return value;
   })
 
-Vue.component('month-menu', {
+  Vue.component('month-menu', {
   // 親コンポーネントから子コンポーネントに値を渡す
   props: ['year', 'month'],
   // 受け取ったデータを代入するコードを記述
-  template: `<button>{{ year }}年{{ month }}月</button><br>`
+  // buttonタグにclickをバインドし、クリックしたら年と月を表示させる
+  // buttonの表示部分を 「2020年○月」にする
+  template: `<button @click="display(year, month)">
+    {{ year | addYear }}{{ month | addMonth }}
+  </button>`,
+  // 年と月の引数を記述してください
+  methods:{
+    // 年と月を引数にする
+    display: function(year, month) {
+      // 子コンポーネントが持つ値を親コンポーネントに渡す
+      // this.$emit('イベント名', 渡す引数A, 渡す引数B, ...)
+      this.$emit('clicked-display-button', year, month);
+    }
+    }
 })
 
 new Vue({
@@ -56,5 +69,13 @@ data: {
     {year: 2021, month: 11},
     {year: 2021, month: 12},
   ]
+},
+
+
+// ボタンをクリックしたら、「年」と「月」を付与してアラートが表示される
+methods: {
+  getCalendar: function(year, month) {
+    alert(year + "年" + month + "月")
+  }
 }
 })
