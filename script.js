@@ -1,3 +1,36 @@
+// filter名に「addYear」、引数に「value」
+Vue.filter('addYear', function(value) {
+  // 「条件が空欄でないとき」の条件式を記述
+  if(value != "") {
+    // valueに「年」を追記
+    value = value + "年";
+  }
+  // 戻り値に「value」を返す。
+  return value;
+})
+
+  // filter名に「addMonth」、引数に「value」
+  Vue.filter('addMonth', function(value) {
+    // 「条件が空欄でないとき」の条件式を記述
+    if(value != "") {
+      // valueに「月」を追記
+      value = value + "月";
+    }
+    // 戻り値に「value」を返す。
+    return value;
+  })
+
+  // filter名に「addDate」、引数に「value」
+  Vue.filter('addDate', function(value) {
+    // 「条件が空欄でないとき」の条件式を記述
+    if(value != "") {
+      // valueに「日」を追記
+      value = value + "日";
+    }
+    // 戻り値に「value」を返す。
+    return value;
+  })
+
 Vue.component('month-menu', {
   // 親コンポーネントから子コンポーネントに値を渡す
   props: ['year', 'month'],
