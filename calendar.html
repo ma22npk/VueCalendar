@@ -20,6 +20,21 @@
       >
       </month-menu>
     </div>
+    <br>
+    <!--カレンダー -->
+    <table border="1">
+      <tr>
+        　<!--headerに曜日を描画 -->
+        <th v-for="header in headers">{{ header }}</th>
+      </tr>
+      <tr v-for="oneweek in dateObjects">
+        <!-- 日付を描画 -->
+        <td v-for="date in oneweek">{{ date | addDate }}</td>
+      </tr>
+    </table>
+    <!--カレンダー -->
+  </div>
+
   </div>
 <script src="script.js"></script>
 </body>
