@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   <link href="style.css" rel="stylesheet">
   <title>Calendar2021</title>
 </head>
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
-  <div id="app">
-    <h1>2021 Calendar!!</h1>
+<body>
+  <div id="wave-bg">
+  <canvas id="wave"></canvas>
+</div>
+  <!-- header -->
+  <header>
+    <div class="inner">
+      <h1>Calendar</h1>
+    </div>
+  </header>
+  <!-- /header -->
+  <div id="app" class="inner item-wrapper">
+    <!-- <i class="fas fa-dumpster"></i>
+      <i class="fas fa-dumbbell"></i>
+      <i class="fas fa-calendar-alt"></i> -->
     <div id="menu">
-      <month-menu
-        v-for="date in dates"
-        :year="date.year"
-        :month="date.month"
-        @clicked-display-button="getCalendar"
-      >
+      <month-menu v-for="date in dates" :year="date.year" :month="date.month" @clicked-display-button="getCalendar">
       </month-menu>
     </div>
     <br>
     <!--カレンダー -->
-    <table border="1">
+    <table border="0">
       <tr>
-        　<!--headerに曜日を描画 -->
+        <!--headerに曜日を描画 -->
         <th v-for="header in headers">{{ header }}</th>
       </tr>
       <tr v-for="oneweek in dateObjects">
@@ -34,8 +44,9 @@
     </table>
     <!--カレンダー -->
   </div>
-
   </div>
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="script.js"></script>
+  <script src="js/canvas.js"></script>
 </body>
 </html>

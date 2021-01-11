@@ -1,0 +1,111 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans', sans-serif;
+}
+
+// 変数の設定 ===========================
+// // 色 --------------------------------
+$backGroundBase:#000;//70%
+$backGroundMain: #fff;
+$fontColorPrimary:#ffff;
+$fontColorSecondary:#000;
+$fontColorPrimaryBack:#000;
+$fontColorSecondaryBack:#fff;
+
+// フォント ---------------------------
+$mainFont: 'Montserrat', sans-serif;
+$subFont: 'Noto Sans', sans-serif;
+
+#wave-bg{
+  canvas#wave {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+}
+
+body{
+
+  background: $backGroundBase;
+}
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 40px;
+	h1 {
+    text-align: center;
+    color: $fontColorSecondaryBack;
+    vertical-align: middle;
+    font-size: 48px;
+    line-height: 90px;
+	}
+}
+.item-wrapper{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-items: center;
+height: 540px;
+}
+
+/*============================
+#menu
+============================*/
+div#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align:center;
+  width: 360px;
+  height: 90px;
+	button {
+    height: 32px;
+    width: 80px;
+    font-size: 12px;
+    background: $backGroundMain;
+    font-family: $mainFont;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    margin-bottom:  10px;
+    transition: all 0.1s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+
+/*============================
+カレンダー
+============================*/
+table {
+  width: 630px;
+  color: $fontColorSecondaryBack;
+  border-collapse: collapse;
+  margin-top: 20px;
+  th{
+    color: $fontColorSecondaryBack;
+    opacity: .8;
+  }
+	tbody {
+		tr {
+
+			td {
+        height: 80px;
+        width: 60px;
+        font-size: 32px;
+
+			}
+		}
+	}
+}
