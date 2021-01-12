@@ -3,7 +3,7 @@ Vue.filter('addYear', function(value) {
   // 「条件が空欄でないとき」の条件式を記述
   if(value != "") {
     // valueに「年」を追記
-    value = value + "年";
+    value = value + ". ";
   }
   // 戻り値に「value」を返す。
   return value;
@@ -14,7 +14,7 @@ Vue.filter('addYear', function(value) {
     // 「条件が空欄でないとき」の条件式を記述
     if(value != "") {
       // valueに「月」を追記
-      value = value + "月";
+      value = value + "";
     }
     // 戻り値に「value」を返す。
     return value;
@@ -25,7 +25,7 @@ Vue.filter('addYear', function(value) {
     // 「条件が空欄でないとき」の条件式を記述
     if(value != "") {
       // valueに「日」を追記
-      value = value + "日";
+      value = value;
     }
     // 戻り値に「value」を返す。
     return value;
@@ -37,7 +37,7 @@ Vue.filter('addYear', function(value) {
   // 受け取ったデータを代入するコードを記述
   // buttonタグにclickをバインドし、クリックしたら年と月を表示させる
   // buttonの表示部分を 「2020年○月」にする
-  template: `<button @click="display(year, month)">
+  template: `<button class="button" @click="display(year, month)">
     {{ year | addYear }}{{ month | addMonth }}
   </button>`,
   // 年と月の引数を記述してください
@@ -72,7 +72,7 @@ data: {
       // dateObjectsに空の配列を定義
       dateObjects: [],
       // headersに曜日を表示させる
-      headers: ["日","月","火","水", "木", "金", "土"]
+      headers: ["SUN","MON","TUE","WED", "THU", "FRI", "SAT"]
 },
 
 
